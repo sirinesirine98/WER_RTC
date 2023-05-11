@@ -206,7 +206,7 @@ connection.onmessage = function (message) {
      // stop form submission
      event.preventDefault();
      // handle the form data
-     var username_obj = form.elements['Userame'];
+     var username_obj = form.elements['Username'];
      username = username_obj.value; 
      document.getElementById('divChatName_username').innerHTML = username;
      send({
@@ -566,7 +566,7 @@ function onSetSessionDescriptionError(error) {
     if (success === false) {
         alert("Username is already taken .. choose different one");
     } else {
-        Update_user_status("clientuser_status","online");
+        Update_user_status("clientuser_status","En Ligne");
         document.getElementById('signupStart').setAttribute('style', 'display:none');
     }
 }
@@ -899,7 +899,7 @@ function populate_error(errorid) {
         text = "Other user has left from the chat !!";
     }
     else if (errorid == "busyuser") {
-        text = "Peer user is in another room.. please try later !!";
+        text = "L'utilisateur que vous devez l'appeler est en communication ";
     }
     else {
         text = "NA";
@@ -1074,12 +1074,12 @@ function create_videocall_page(){
                 '<div class="button_calls">'+
                         '<div class="col-xs-1">'+
                             '<button id="hide_camera" type="button" class="btn" onclick="togglevideo()">'+
-                            '<i class="btn-default btn material-icons video" style="color:white">videocam_off</i>'+
+                            '<i class="btn-default btn material-icons video" style="color:white">Fermer_cam</i>'+
                             '</button>'+
                         '</div>'+
                         '<div class="offset-md-2">'+
                             '<button id="mute_camera" type="button" class="btn" onclick="togglemute()">'+
-                            '<i class="btn-default btn material-icons mic" style="color:white">mic_off</i>'+
+                            '<i class="btn-default btn material-icons mic" style="color:white">Fermer_micro</i>'+
                             '</button>'+
                         '</div>'+
                 '</div>'+
@@ -1245,7 +1245,7 @@ function LoadOnlineUserList(username_array) {
     const map2 = new Map(username_array);
     /* Count of online user -> server send all user list , we have to remove our name from that list */
     document.getElementById('onlineusers').innerHTML = '<span class="indicator label-success"></span>' +
-                                                        'online users (' + (map2.size - 1) + ')';
+                                                        'Utilisateurs en ligne (' + (map2.size - 1) + ')';
     document.getElementById('lstChat').innerHTML = "";
 
     if (map2.size > 1) {

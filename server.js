@@ -40,7 +40,7 @@ wss.on('connection', function (connection) {
 						connection.name = data.name;
 						connection.otherName = null;
 						/* store the connection name in the userlist */
-						map.set(data.name,'online');
+						map.set(data.name,'EnLigne');
 						/* send response to client back with login sucess */
 						sendTo(connection, { type: "server_login", success: true });
 						console.log("Login sucess");
@@ -112,8 +112,8 @@ wss.on('connection', function (connection) {
 						/* Send response back to users who are in the room */
 						sendTo(conn, { type: "server_userwanttoleave" });
 						sendTo(connection, { type: "server_userwanttoleave" });
-						map.set(data.name,'online');
-						map.set(connection.name,'online');
+						map.set(data.name,'En Ligne');
+						map.set(connection.name,'En Ligne');
 						/* Update the connection status with available */
 						conn.otherName = null;
 						connection.otherName = null;
@@ -234,7 +234,7 @@ wss.on('connection', function (connection) {
 					connection.otherName = null;
 					/* Send the response back to peer user */
 					sendTo(conn, { type: "server_exitfrom" });
-					map.set(conn.name,'online');
+					map.set(conn.name,'En Ligne');
 				}
 			}
 
