@@ -1096,7 +1096,8 @@ function create_videocall_page(){
                 '<div class="tab-pane fade show active" id="smiley" aria-labelledby="home-tab">'+
                 '</div>'+
             '</div>'+
-        '</div>'+
+    '</div>' +
+        
         '<div class="row">'+
             '<div class="col-2 col-md-1" style="cursor:pointer;">'+
                 '<i class="far fa-grin fa-2x" onclick="showEmojiPanel()"></i>'+
